@@ -1,0 +1,37 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%>
+
+<div class="main">
+  <div class="main-containerr newz">
+    <form action="/show/<%=product._id%>?_method=put" method="post">
+      <label for="name">Product Name</label>
+      <input type="text" name="name" id="name" value="<%=product.name %>" />
+      <label for="price">Product Price</label>
+      <input type="text" name="price" id="price" value="<%=product.price%>" />
+      <label for="category">Product Category</label>
+      <input
+        type="text"
+        name="category"
+        id="category"
+        value="<%=product.category%>"
+      />
+      <label for="seller">Product Seller</label>
+      <input
+        type="seller"
+        name="seller"
+        id="seller"
+        value="<%=product.seller %>"
+      />
+      <label for="url">Product Image Url</label>
+      <input type="text" name="url" id="url" value="<%=product.url%>" />
+      <label for="description">Product description</label>
+      <textarea type="text" name="description" id="description">
+    <%=product.description%></textarea
+      >
+      <button type="submit">Save Changes</button>
+    </form>
+    <a style="margin-bottom: 1rem" href="/home">All Products</a>
+    <a href="/show/<%= product._id %>">Back</a>
+  </div>
+</div>
+
+<%-include('../partials/footer')%>

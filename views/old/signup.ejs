@@ -1,0 +1,60 @@
+<%- include('partials/header')%>
+
+<div class="forms">
+  <div class="forms-containerr">
+    <div class="box1"></div>
+    <div class="box2">
+      <h1>Sign Up</h1>
+      <form action="/signin" method="post">
+        <label for="email">Email</label>
+        <input class="input email" type="email" name="email" id="email" />
+        <label for="password">Password</label>
+        <input
+          class="input password"
+          type="password"
+          name="password"
+          id="password"
+        />
+        <label for="cpassword">Confirm Password</label>
+        <input
+          class="input cpassworde"
+          type="password"
+          name="cpassword"
+          id="cpassword"
+        />
+        <p class="hidden">HAHAHA</p>
+        <button class="submit" type="submit">Sign Up</button>
+      </form>
+      <hr />
+      <div class="logins">
+        <div class="box">
+          <a href=""><i class="fa-brands fa-facebook fa-3x"></i></a>
+          <a href=""><i class="fa-brands fa-google fa-3x"></i></a>
+          <a href=""><i class="fa-brands fa-apple fa-3x"></i></a>
+        </div>
+        <a href="/signin">Already have an account? Sign In</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const input = document.querySelectorAll(".box2 input");
+  const p = document.querySelector(".box2 p");
+  const btn = document.querySelector(".box2 button");
+  btn.addEventListener("click", () => {
+    for (i of input) {
+      if (i.value === "") {
+        p.textContent = "Please fill all the forms!";
+        setTimeout(() => {
+          p.classList.remove("hidden");
+        }, 0);
+        setTimeout(() => {
+          p.classList.add("hidden");
+        }, 10000);
+      }
+    }
+  });
+</script>
+
+<%- include('partials/footer')%>

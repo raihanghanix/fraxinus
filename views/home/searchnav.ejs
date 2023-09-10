@@ -1,0 +1,32 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%>
+
+<div style="height: 85vh" class="main">
+  <div class="main-containerr">
+    <p href="#" class="result">
+      <i class="fa-solid fa-magnifying-glass"></i>Result for:
+      <span><%= search %> </span>
+    </p>
+    <section class="items">
+      <div class="container1">
+        <div class="grid">
+          <% for(let p of products) { %>
+          <a class="item" href="/show/<%= p._id %> ">
+            <div class="item-img">
+              <img src="<%= p.url %> " alt="img" />
+            </div>
+            <div class="item-desc">
+              <h4><%= p.name %></h4>
+              <h5>Rp. <%= p.price %></h5>
+              <hr />
+              <h5><%= p.category %></h5>
+              <p><%= p.seller %></p>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<%-include('../partials/footer')%>

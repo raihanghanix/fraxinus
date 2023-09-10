@@ -1,0 +1,11 @@
+<%- include('partials/header')%> <%- include('partials/navbar')%>
+
+<form action="/home" method="post">
+  <label for="name">Product Name</label>
+  <input class="input email" type="text" name="name" id="name" />
+  <label for="category">Product Category</label>
+  <input class="input password" type="text" name="category" id="category" />
+  <button class="submit" type="submit">Sell</button>
+</form>
+
+<%-include('partials/footer')%>

@@ -1,0 +1,42 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%>
+
+<!-- <p><%=product._id %></p>
+<img src="<%= product.url %> " alt="img" />
+<h2><%= product.name %></h2>
+<h2><%= product.price %></h2>
+<h4><%= product.category %></h4>
+<h4><%= product.seller %></h4>
+<p><%= product.description %></p> -->
+
+<div class="itemz-desc showz">
+  <div class="itemz-desc-containerr">
+    <div class="box1">
+      <img src="<%= product.url %> " alt="img" />
+    </div>
+    <div class="box2">
+      <h1><%= product.name %></h1>
+      <h2>Rp. <%= product.price %></h2>
+      <hr />
+      <p>Category: <%= product.category %></p>
+      <p>Seller: <%= product.seller %></p>
+      <hr />
+      <p><%= product.description %></p>
+      <div class="phone">
+        <h1><i class="fa-brands fa-whatsapp"></i>082320426161</h1>
+        <h3>Contact this Number for Transaction</h3>
+      </div>
+      <div class="actions">
+        <button><i class="fa-solid fa-heart"></i>Wishlist</button>
+      </div>
+      <div class="actions">
+        <form action="/show/<%= product._id %>?_method=delete" method="post">
+          <button type="submit">Delete Product</button>
+        </form>
+      </div>
+      <a href="/show/<%= product._id %>/edit">Edit This Product</a>
+      <a href="/home">All Products</a>
+    </div>
+  </div>
+</div>
+
+<%-include('../partials/footer')%>

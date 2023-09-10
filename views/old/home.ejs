@@ -1,0 +1,64 @@
+<%- include('partials/header')%> <%- include('partials/navbar')%>
+
+<div class="main">
+  <div class="main-containerr">
+    <div class="categories">
+      <a href="/search">
+        <i class="fa-solid fa-sun fa-1x"></i>
+        <p>Outdoors</p>
+      </a>
+      <a href="/search">
+        <i class="fa-solid fa-leaf fa-1x"></i>
+        <p>Indoors</p>
+      </a>
+      <a href="/search">
+        <i class="fa-solid fa-seedling fa-1x"></i>
+        <p>Seeds</p>
+      </a>
+      <a href="/search">
+        <i class="fa-solid fa-droplet fa-1x"></i>
+        <p>Fertilizers</p>
+      </a>
+    </div>
+
+    <div class="categories">
+      <a href="/sell">
+        <i class="fa-solid fa-circle-plus"></i>
+        <p>Sell Product</p>
+      </a>
+      <a href="/show">
+        <i class="fa-solid fa-list"></i>
+        <p>Show Product</p>
+      </a>
+      <a href="/update">
+        <i class="fa-solid fa-pencil"></i>
+        <p>Update Product</p>
+      </a>
+      <a href="/remove">
+        <i class="fa-solid fa-trash"></i>
+        <p>Remove Product</p>
+      </a>
+    </div>
+
+    <section class="items">
+      <div class="container1">
+        <div class="grid">
+          <% for(let product of products) { %>
+          <a class="item" href="/item">
+            <div class="item-img"></div>
+            <div class="item-desc">
+              <h4><%= product.name %></h4>
+              <h5>Rp. <%= product.price %></h5>
+              <hr />
+              <h5><%= product.category %></h5>
+              <p><%= product.seller %></p>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<%- include('partials/footer')%>
